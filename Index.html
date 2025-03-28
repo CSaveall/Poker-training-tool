@@ -39,4 +39,41 @@
     </div>
     <div id="feedback"></div>
     <script>
-        const deck
+        const deck = [
+            "A♠", "K♠", "Q♠", "J♠", "10♠", "9♠", "8♠", "7♠", "6♠", "5♠", "4♠", "3♠", "2♠",
+            "A♥", "K♥", "Q♥", "J♥", "10♥", "9♥", "8♥", "7♥", "6♥", "5♥", "4♥", "3♥", "2♥",
+            "A♦", "K♦", "Q♦", "J♦", "10♦", "9♦", "8♦", "7♦", "6♦", "5♦", "4♦", "3♦", "2♦",
+            "A♣", "K♣", "Q♣", "J♣", "10♣", "9♣", "8♣", "7♣", "6♣", "5♣", "4♣", "3♣", "2♣"
+        ];
+
+        function dealHand() {
+            const hand = [];
+            for (let i = 0; i < 2; i++) {
+                const cardIndex = Math.floor(Math.random() * deck.length);
+                hand.push(deck[cardIndex]);
+            }
+            document.getElementById("hand").innerHTML = `
+                <div class="card">${hand[0]}</div>
+                <div class="card">${hand[1]}</div>
+            `;
+            document.getElementById("feedback").innerHTML = ""; // Clear feedback
+        }
+
+        function chooseAction(action) {
+            let feedback = "";
+            if (action === "Fold") {
+                feedback = "Folding is smart when you're unsure!";
+            } else if (action === "Call") {
+                feedback = "Calling can keep you in the game!";
+            } else if (action === "Raise") {
+                feedback = "Raising shows you're confident!";
+            } else if (action === "Check") {
+                feedback = "Checking lets you see what’s next!";
+            }
+            document.getElementById("feedback").innerHTML = feedback;
+        }
+
+        dealHand(); // Automatically deal a hand when the page loads
+    </script>
+</body>
+</html>
