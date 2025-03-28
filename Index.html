@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Training Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .card {
+            display: inline-block;
+            margin: 5px;
+            font-size: 24px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .actions button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #feedback {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Learn to Play Poker</h1>
+    <div id="hand"></div>
+    <div class="actions">
+        <button onclick="chooseAction('Fold')">Fold</button>
+        <button onclick="chooseAction('Call')">Call</button>
+        <button onclick="chooseAction('Raise')">Raise</button>
+        <button onclick="chooseAction('Check')">Check</button>
+    </div>
+    <div id="feedback"></div>
+    <script>
+        const deck
